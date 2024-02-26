@@ -233,8 +233,7 @@ AREXPORT void ArLog::logErrorFromOS(LogLevel level, const char *str, ...)
 
 #ifndef WIN32
   const char *errorString = NULL;
-  if (err < sys_nerr - 1)
-    errorString = sys_errlist[err];
+  errorString = strerror(err);
   snprintf(bufWithError, sizeof(bufWithError) - 1, "%s | ErrorFromOSNum: %d ErrorFromOSString: %s", buf, err, errorString);
   bufWithError[sizeof(bufWithError) - 1] = '\0';
 #else
@@ -362,8 +361,7 @@ AREXPORT void ArLog::logErrorFromOSNoLock(LogLevel level, const char *str, ...)
 
 #ifndef WIN32
   const char *errorString = NULL;
-  if (err < sys_nerr - 1)
-    errorString = sys_errlist[err];
+  errorString = strerror(err);
   snprintf(bufWithError, sizeof(bufWithError) - 1, "%s | ErrorFromOSNum: %d ErrorFromOSString: %s", buf, err, errorString);
   bufWithError[sizeof(bufWithError) - 1] = '\0';
 #else
