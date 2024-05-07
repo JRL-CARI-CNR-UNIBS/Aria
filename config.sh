@@ -1,4 +1,8 @@
-echo "Run as Root"
+# Building Aria and ArNetworking
+make Aria
+cd ArNetworking
+make ArNetworking
+cd ..
 
 # Create directories
 sudo mkdir -p /usr/local/include/Aria/
