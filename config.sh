@@ -1,7 +1,7 @@
 # Building Aria and ArNetworking
-make Aria
+make
 cd ArNetworking
-make ArNetworking
+make
 cd ..
 
 # Create directories
